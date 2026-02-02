@@ -1,6 +1,7 @@
 package com.nkechinnaji.recipefinder.navigation
 
 sealed class Screen(val route: String) {
+    data object Welcome : Screen("welcome")
     data object Categories : Screen("categories")
     data object Search : Screen("search")
     data object Random : Screen("random")

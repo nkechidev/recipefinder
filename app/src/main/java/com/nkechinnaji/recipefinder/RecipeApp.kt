@@ -26,7 +26,7 @@ fun RecipeApp() {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
     
-    // Hide bottom bar and top bar on detail screens
+    // Hide bottom bar and top bar on welcome screen and detail screens
     val showBars = currentRoute in listOf(
         Screen.Categories.route,
         Screen.Search.route,

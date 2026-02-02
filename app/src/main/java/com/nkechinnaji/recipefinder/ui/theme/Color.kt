@@ -11,6 +11,7 @@ val OnPrimary = Color.White
 val Background = Color(0xFFFAFAFA)
 val Surface = Color.White
 val SurfaceVariant = Color(0xFFF0F0F0)
+val WelcomeBackground = Color(0xFFF8F5F0) // Light beige/off-white for welcome screen
 
 // Text colors
 val OnBackground = Color(0xFF1A1A1A)
