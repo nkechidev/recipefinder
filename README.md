@@ -2,6 +2,10 @@
 
 Recipe Finder is an Android app that helps you discover meals and recipes. Browse by category, search by name, get a random meal, or save favorites for later.
 
+## Video
+
+[App demo](assets/demo.mp4)
+
 ## What the app does
 
 - **Browse** — Explore meals by category (e.g. Beef, Chicken, Desserts). Tap a category to see its meals, then open any meal for full details and instructions.
