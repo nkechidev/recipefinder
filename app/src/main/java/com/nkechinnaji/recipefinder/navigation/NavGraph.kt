@@ -25,6 +25,7 @@ import com.nkechinnaji.recipefinder.ui.screens.search.SearchScreen
 import com.nkechinnaji.recipefinder.ui.screens.search.SearchViewModel
 import com.nkechinnaji.recipefinder.ui.screens.tonightspick.TonightsPickScreen
 import com.nkechinnaji.recipefinder.ui.screens.tonightspick.TonightsPickViewModel
+import com.nkechinnaji.recipefinder.ui.screens.welcome.WelcomeScreen
 
 @Composable
 fun NavGraph(
@@ -46,9 +47,19 @@ fun NavGraph(
     
     NavHost(
         navController = navController,
-        startDestination = Screen.Categories.route,
+        startDestination = Screen.Welcome.route,
         modifier = modifier
     ) {
+        composable(Screen.Welcome.route) {
+            WelcomeScreen(
+                onStartClick = {
+                    navController.navigate(Screen.Categories.route) {
+                        popUpTo(Screen.Welcome.route) { inclusive = true }
+                    }
+                }
+            )
+        }
+
         composable(Screen.Categories.route) {
             CategoriesScreen(
                 viewModel = categoriesViewModel,
