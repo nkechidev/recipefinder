@@ -4,9 +4,15 @@ Recipe Finder is an Android app that helps you discover meals and recipes. Brows
 
 ## Video
 
-<p align="center">
-  <video src="videos/demo.mp4" controls width="800" title="RecipeFinder App Demo"></video>
-</p>
+*(Upload your video so it plays inline: edit this README on GitHub, then drag and drop your video file into the editor where this line is. GitHub will insert an embedded player and host the file.)*
+
+**Steps (do this on GitHub):**
+1. Open your repo on GitHub and click the **pencil icon** (Edit) on this README.
+2. Delete the placeholder line above (or the line where you want the video).
+3. **Drag and drop** your video file (e.g. `videos/demo.mp4` from your computer, or the file from your repo) into the editor.
+4. GitHub will upload it and insert the video. **Commit** the change.
+
+Your demo will then play inline in the README.
 
 ## What the app does
 
