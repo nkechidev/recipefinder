@@ -4,7 +4,7 @@ Recipe Finder is an Android app that helps you discover meals and recipes. Brows
 
 ## Video
 
-[▶️ Watch the demo video](videos/fooddemo.mp4)
+[▶️ Watch the demo video](https://youtube.com/shorts/J8d8GlVUM8E)
 
 ## What the app does
 
