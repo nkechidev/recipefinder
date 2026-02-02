@@ -4,8 +4,6 @@ Recipe Finder is an Android app that helps you discover meals and recipes. Brows
 
 ## Video
 
-Put your video file (e.g. `demo.mp4` or `demo.webm`) in the repo and link it below. On GitHub, this will show an inline player.
-
 [App demo](assets/demo.mp4)
 
 ## What the app does
