@@ -1,5 +1,7 @@
 package com.nkechinnaji.recipefinder.navigation
 
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -48,13 +50,23 @@ fun NavGraph(
     NavHost(
         navController = navController,
         startDestination = Screen.Welcome.route,
-        modifier = modifier
+        modifier = modifier,
+        // Avoid multi-frame transitions: the route updates to Categories before Welcome is gone,
+        // so RecipeApp shows the top/bottom bars and shrinks the NavHost while Welcome is still
+        // visible — the scroll layout drops the bottom button first while the image stays on screen.
+        enterTransition = { EnterTransition.None },
+        exitTransition = { ExitTransition.None },
+        popEnterTransition = { EnterTransition.None },
+        popExitTransition = { ExitTransition.None }
     ) {
         composable(Screen.Welcome.route) {
             WelcomeScreen(
                 onStartClick = {
+                    // Do not pop the start destination with popUpTo(inclusive = true) here — that
+                    // clears Welcome before Categories is committed and NavHost can briefly show
+                    // the graph startDestination (Welcome) again, then animate to Categories.
                     navController.navigate(Screen.Categories.route) {
-                        popUpTo(Screen.Welcome.route) { inclusive = true }
+                        launchSingleTop = true
                     }
                 }
             )

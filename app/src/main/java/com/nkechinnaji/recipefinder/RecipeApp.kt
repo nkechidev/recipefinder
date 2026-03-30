@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.draw.alpha
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -39,25 +40,28 @@ fun RecipeApp() {
         modifier = Modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
         topBar = {
-            if (showBars) {
-                Column {
-                    RecipeTopBar()
-                    HorizontalDivider(
-                        thickness = 1.dp,
-                        color = BorderLight
-                    )
-                }
+            Column(modifier = Modifier.alpha(if (showBars) 1f else 0f)) {
+                RecipeTopBar()
+                HorizontalDivider(
+                    thickness = 1.dp,
+                    color = BorderLight
+                )
             }
         },
         bottomBar = {
-            if (showBars) {
-                BottomNavigationBar(navController = navController)
-            }
+            BottomNavigationBar(
+                navController = navController,
+                enabled = showBars,
+                modifier = Modifier.alpha(if (showBars) 1f else 0f)
+            )
         }
     ) { paddingValues ->
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                // Only inset for top/bottom bars on tab screens. Applying Scaffold padding while
+                // Welcome is still visible (during NavHost transitions) shrinks the scroll area
+                // and the bottom button can clip away before the image does.
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
         ) {

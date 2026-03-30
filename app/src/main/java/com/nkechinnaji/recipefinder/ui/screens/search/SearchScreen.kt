@@ -23,7 +23,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -41,8 +40,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.nkechinnaji.recipefinder.data.model.Meal
-import com.nkechinnaji.recipefinder.data.model.MealPreview
+import com.nkechinnaji.recipefinder.ui.components.AppLoadingIndicator
 import com.nkechinnaji.recipefinder.ui.theme.SurfaceVariant
 
 @Composable
@@ -138,10 +136,7 @@ fun SearchScreen(
         Box(modifier = Modifier.fillMaxSize()) {
             when {
                 uiState.isLoading -> {
-                    CircularProgressIndicator(
-                        modifier = Modifier.align(Alignment.Center),
-                        color = MaterialTheme.colorScheme.primary
-                    )
+                    AppLoadingIndicator(modifier = Modifier.align(Alignment.Center))
                 }
                 uiState.error != null -> {
                     Text(

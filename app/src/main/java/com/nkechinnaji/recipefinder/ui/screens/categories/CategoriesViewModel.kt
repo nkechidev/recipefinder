@@ -19,7 +19,7 @@ class CategoriesViewModel(
     private val repository: RecipeRepository
 ) : ViewModel() {
     
-    private val _uiState = MutableStateFlow(CategoriesUiState())
+    private val _uiState = MutableStateFlow(CategoriesUiState(isLoading = true))
     val uiState: StateFlow<CategoriesUiState> = _uiState.asStateFlow()
     
     init {

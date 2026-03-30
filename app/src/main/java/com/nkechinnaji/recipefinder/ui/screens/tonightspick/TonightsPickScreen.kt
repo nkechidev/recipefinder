@@ -22,7 +22,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
@@ -41,6 +40,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.nkechinnaji.recipefinder.ui.components.SparklesIcon
+import com.nkechinnaji.recipefinder.ui.components.AppLoadingIndicator
 import com.nkechinnaji.recipefinder.ui.theme.BorderLight
 import com.nkechinnaji.recipefinder.ui.theme.SurfaceVariant
 
@@ -64,7 +64,7 @@ fun TonightsPickScreen(
     ) {
         when {
             uiState.isLoading -> {
-                CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+                AppLoadingIndicator()
             }
             else -> {
                 Column(

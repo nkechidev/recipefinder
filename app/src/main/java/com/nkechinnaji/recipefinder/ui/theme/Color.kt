@@ -3,7 +3,7 @@ package com.nkechinnaji.recipefinder.ui.theme
 import androidx.compose.ui.graphics.Color
 
 // Primary colors
-val Primary = Color(0xFF1A1A1A)
+val Primary = Color(0xFFE86A33)
 val PrimaryVariant = Color(0xFF2D2D2D)
 val OnPrimary = Color.White
 
@@ -11,13 +11,12 @@ val OnPrimary = Color.White
 val Background = Color(0xFFFAFAFA)
 val Surface = Color.White
 val SurfaceVariant = Color(0xFFF0F0F0)
-val WelcomeBackground = Color(0xFFF8F5F0) // Light beige/off-white for welcome screen
+val WelcomeBackground = Color(0xFFFFF8F1) // Light beige/off-white for welcome screen
 
 // Text colors
 val OnBackground = Color(0xFF1A1A1A)
 val OnSurface = Color(0xFF1A1A1A)
 val OnSurfaceVariant = Color(0xFF6B7280)
-val TextSecondary = Color(0xFF9CA3AF)
 
 // Accent colors
 val TabSelected = Color.White
