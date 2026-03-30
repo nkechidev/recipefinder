@@ -18,3 +18,16 @@ local.properties
 
 # Captures
 captures/
+
+# Keystore files (for Play Store signing later)
+*.jks
+*.keystore
+
+# Logs
+*.log
+
+# Android Studio cache
+/.navigation/
+
+# Kotlin/Java temp files
+*.class

@@ -7,9 +7,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitInstance {
-    
-    private const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
-    
+
+    private const val BASE_URL = "https://www.themealdb.com/api/json/v2/"
+
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }

@@ -19,19 +19,19 @@ class RecipeRepository(private val favoriteDao: FavoriteDao) {
     }
     
     suspend fun getMealsByCategory(category: String): Result<List<MealPreview>> = runCatching {
-        api.getMealsByCategory(category).meals ?: emptyList()
+        api.getMealsByCategory(category = category).meals ?: emptyList()
     }
     
     suspend fun searchMealsByName(name: String): Result<List<Meal>> = runCatching {
-        api.searchMealsByName(name).meals ?: emptyList()
+        api.searchMealsByName(name = name).meals ?: emptyList()
     }
     
     suspend fun filterMealsByIngredient(ingredient: String): Result<List<MealPreview>> = runCatching {
-        api.filterMealsByIngredient(ingredient).meals ?: emptyList()
+        api.filterMealsByIngredient(ingredient = ingredient).meals ?: emptyList()
     }
     
     suspend fun getMealById(id: String): Result<Meal?> = runCatching {
-        api.getMealById(id).meals?.firstOrNull()
+        api.getMealById(id = id).meals?.firstOrNull()
     }
     
     suspend fun getRandomMeal(): Result<Meal?> = runCatching {
